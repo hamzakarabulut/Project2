@@ -43,10 +43,9 @@ public class Student {
             Scanner in  = new Scanner(System.in);
             String course = in.nextLine();
             if (!course.equals("Q")) {
-                courses = courses + "\n" + course;
+                courses = courses + "\n   " + course;
                 tuitionBalance = tuitionBalance + costOfCourse;                
             }else{
-                System.out.println("BREAK!");
                 break;
             }
             
@@ -55,8 +54,28 @@ public class Student {
         System.out.println("TUTION BALANCE : " + tuitionBalance);
     }
 
+    // View Balance
+    public void viewBalance(){
+        System.out.println("Your balance is:  $" + tuitionBalance);
+    }
+
     // Pay Tuition
+    public void payTuition(){
+        System.out.println("Enter your payment");
+        Scanner in = new Scanner(System.in);
+        int payment = in.nextInt();
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for your payment of $" + payment);
+        viewBalance();
+    }
 
     //Show Status
+    public String toString(){
+        return "Name : " + fname + " Lastname : " + lname +
+                "\nGrade Level : " + gradeYear + 
+                "\nStudent ID :" + studentId +
+                "\nCourses Enrolled" + courses + 
+                "\nBalance: $" + tuitionBalance;
+    }
 
 }

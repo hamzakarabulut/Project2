@@ -3,13 +3,28 @@
  */
 package StudentDBApp;
 
+import java.util.Scanner;
+
 public class App {
    
 
     public static void main(String[] args) {
-        Student s1 = new Student();
-        s1.enroll();
+        
+        
+
+        // Ask how many new students we want to add
+        System.out.println("Enter number of new students to enroll");
+        Scanner in = new Scanner(System.in);
+        int numberOfStudent = in.nextInt();
+        Student[] students = new Student[numberOfStudent];
+
+        // Create n number of Student
+        for(int i = 0; i <numberOfStudent ; i++){
+            students[i] = new Student();
+            students[i].enroll();
+            students[i].payTuition();
+            System.out.println(students.toString());
+        }
+
     }
-
-
 }
