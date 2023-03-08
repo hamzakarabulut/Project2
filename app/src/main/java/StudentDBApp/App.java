@@ -23,8 +23,12 @@ public class App {
             students[i] = new Student();
             students[i].enroll();
             students[i].payTuition();
-            System.out.println(students.toString());
         }
+        System.out.println(students[0].toString());
+        System.out.println(students[1].toString());
+        System.out.println(students[2].toString());
+
+
 
     }
 }
